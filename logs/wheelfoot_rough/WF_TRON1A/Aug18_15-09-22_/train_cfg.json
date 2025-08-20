@@ -1,0 +1,65 @@
+{
+    "MLP_Encoder": {
+        "activation": "elu",
+        "hidden_dims": [
+            256,
+            128
+        ],
+        "num_input_dim": 280,
+        "num_output_dim": 3,
+        "orthogonal_init": false,
+        "output_detach": true
+    },
+    "algorithm": {
+        "clip_param": 0.2,
+        "critic_take_latent": true,
+        "desired_kl": 0.01,
+        "entropy_coef": 0.01,
+        "est_learning_rate": 0.001,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "learning_rate": 0.001,
+        "max_grad_norm": 1.0,
+        "num_learning_epochs": 5,
+        "num_mini_batches": 4,
+        "schedule": "adaptive",
+        "ts_learning_rate": 0.0001,
+        "use_clipped_value_loss": true,
+        "value_loss_coef": 1.0
+    },
+    "init_member_classes": {},
+    "policy": {
+        "activation": "elu",
+        "actor_hidden_dims": [
+            512,
+            256,
+            128
+        ],
+        "critic_hidden_dims": [
+            512,
+            256,
+            128
+        ],
+        "init_noise_std": 1.0,
+        "orthogonal_init": false
+    },
+    "runner": {
+        "algorithm_class_name": "PPO",
+        "checkpoint": -1,
+        "encoder_class_name": "MLP_Encoder",
+        "experiment_name": "WF_TRON1A",
+        "exptid": "",
+        "load_run": "-1",
+        "logger": "tensorboard",
+        "max_iterations": 15000,
+        "num_steps_per_env": 24,
+        "policy_class_name": "ActorCritic",
+        "resume": false,
+        "resume_path": "None",
+        "run_name": "",
+        "save_interval": 500,
+        "wandb_project": "legged_gym_WF"
+    },
+    "runner_class_name": "OnPolicyRunner",
+    "seed": 1
+}
